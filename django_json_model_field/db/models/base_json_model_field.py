@@ -6,14 +6,7 @@ from django.core.exceptions import ValidationError
 from django.db.backends.base.base import BaseDatabaseWrapper
 from django.db.models import Field, Model
 
-# Compatibility for Django 2.x and 3.x
-# Django 2.x doesn't implement JSONField and we have to use the backport lib. Django 3.x does support JSONField natively
-# and the django_jsonfield_backport is incompatible with Django 3.x
-# This can be removed once we fully migrate to Django 3.2
-try:
-    from django.db.models import JSONField
-except ImportError:
-    from django_jsonfield_backport.models import JSONField
+from django.db.models import JSONField
 
 if TYPE_CHECKING:
     from .json_model import JSONModel

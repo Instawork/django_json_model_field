@@ -12,7 +12,7 @@ package_data = \
  'django_json_model_field': ['templates/django_json_model_field/forms/widgets/*']}
 
 install_requires = \
-['Django>=2.2,<3.3']
+['Django>=2.2,<4.2']
 
 setup_kwargs = {
     'name': 'django-json-model-field',
